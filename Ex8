@@ -1,0 +1,200 @@
+1)// set 4 invoices table
+
+<%--
+    Document   : newjsp1
+    Created on : Mar 26, 2024, 1:52:32 PM
+    Author     : Administrator
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <% Connection c= DriverManager.getConnection( "jdbc:derby://localhost:1527/ex8" );
+        Statement st=c.createStatement();
+       
+        ResultSet rs=st.executeQuery("select * from invoices ");
+        %>
+        <table style="border:solid 2px">
+                    <tr><th style="border:solid 2px">invoice id</th> <th style="border:solid 2px">customer name</th> <th style="border:solid 2px">date</th> <th style="border:solid 2px">total amount</th></tr>
+
+        <% while(rs.next())
+        {%>
+       
+        <tr style="border:solid 2px"><td style="border:solid 2px"><% out.println(rs.getInt(1)); %></td>
+        <td style="border:solid 2px"><% out.println(rs.getString(2)); %></td>
+        <td style="border:solid 2px"><% out.println(rs.getDate(3)); %></td>
+         <td style="border:solid 2px"><% out.println(rs.getDouble(4)); %></td></tr >
+        <%}%>
+        </table>
+    </body>
+</html>
+
+2)sum
+
+
+Conversation opened. 1 read message. 
+
+Skip to content
+Using Gmail with screen readers
+2 of 192
+(no subject)
+Inbox
+
+
+
+<%--
+    Document   : newjsp1
+    Created on : Mar 26, 2024, 1:52:32 PM
+    Author     : Administrator
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <% Connection c= DriverManager.getConnection( "jdbc:derby://localhost:1527/ex8" );
+        Statement st=c.createStatement();
+       
+        ResultSet rs=st.executeQuery("select sum(total_amount) from invoices ");
+        %>
+       
+       
+
+
+        <table style="border:solid 2px">
+                    <tr><th style="border:solid 2px">invoice id</th> <th style="border:solid 2px">customer name</th>
+                        <th style="border:solid 2px">date</th> <th style="border:solid 2px">total amount</th></tr>
+
+        <% while(rs.next())
+        {%>
+          <tr style="border:solid 2px"><td></td>
+        <td></td>
+        <td></td>
+        <td style="border:solid 2px"><%out.println(rs.getDouble(4));%></td></tr>
+            <%}%>
+           
+             
+   
+        </table>
+    </body>
+</html>
+
+3)average
+
+Conversation opened. 1 read message. 
+
+Skip to content
+Using Gmail with screen readers
+2 of 192
+(no subject)
+Inbox
+
+
+
+<%--
+    Document   : newjsp1
+    Created on : Mar 26, 2024, 1:52:32 PM
+    Author     : Administrator
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <% Connection c= DriverManager.getConnection( "jdbc:derby://localhost:1527/ex8" );
+        Statement st=c.createStatement();
+       
+        ResultSet rs=st.executeQuery("select avg(total_amount) from invoices ");
+        %>
+       
+       
+
+
+        <table style="border:solid 2px">
+                    <tr><th style="border:solid 2px">invoice id</th> <th style="border:solid 2px">customer name</th>
+                        <th style="border:solid 2px">date</th> <th style="border:solid 2px">total amount</th></tr>
+
+        <% while(rs.next())
+        {%>
+          <tr style="border:solid 2px"><td></td>
+        <td></td>
+        <td></td>
+        <td style="border:solid 2px"><%out.println(rs.getDouble(4));%></td></tr>
+            <%}%>
+           
+             
+   
+        </table>
+    </body>
+</html>
+
+4)count
+
+
+Conversation opened. 1 read message. 
+
+Skip to content
+Using Gmail with screen readers
+2 of 192
+(no subject)
+Inbox
+
+
+
+<%--
+    Document   : newjsp1
+    Created on : Mar 26, 2024, 1:52:32 PM
+    Author     : Administrator
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <% Connection c= DriverManager.getConnection( "jdbc:derby://localhost:1527/ex8" );
+        Statement st=c.createStatement();
+       
+        ResultSet rs=st.executeQuery("select count(*) from invoices ");
+        %>
+       
+       
+
+
+        <table style="border:solid 2px">
+                    <tr><th style="border:solid 2px">invoice id</th> <th style="border:solid 2px">customer name</th>
+                        <th style="border:solid 2px">date</th> <th style="border:solid 2px">total amount</th></tr>
+
+        <% while(rs.next())
+        {%>
+          <tr style="border:solid 2px"><td></td>
+        <td></td>
+        <td></td>
+        <td style="border:solid 2px"><%out.println(rs.getInt(1));%></td></tr>
+            <%}%>
+           
+             
+   
+        </table>
+    </body>
+</html>
